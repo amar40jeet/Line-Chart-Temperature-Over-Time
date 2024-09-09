@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+
+# Get user input
+days = input("Enter the days (comma-separated): ").split(',')
+temperatures = list(map(float, input("Enter the temperatures for each day (comma-separated): ").split(',')))
+
+# Ensure the number of days matches the number of temperatures
+if len(days) != len(temperatures):
+    print("The number of days must match the number of temperatures.")
+else:
+    # Create the line chart
+    plt.figure(figsize=(10, 6))
+    plt.plot(days, temperatures, marker='o', linestyle='-', color='green')
+
+    # Add title and labels
+    plt.title("Temperature Over Time")
+    plt.xlabel("Days")
+    plt.ylabel("Temperature (°C)")
+
+    # Display the line chart
+    plt.show()
+
